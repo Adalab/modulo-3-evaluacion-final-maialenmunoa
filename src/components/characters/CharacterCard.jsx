@@ -1,15 +1,27 @@
+import PropTypes from "prop-types";
 
-function CharacterCard() {
+function CharacterCard( {character} ) {
   return (
     <>
-      <img src="character-image.jpg" alt="" />
+      <img 
+      src={character.image ||
+          "https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter"} 
+          alt={character.name} />
       <div className="character-info">
-        <h1>Harry Potter</h1>
-        <p>Wizard</p>
-        <span className="status-icon alive">Vivo o muerto</span>
+        <h1>{character.name}</h1>
+        <p>{character.species}</p>
+        <p>{character.alive ? 'Vivo' : 'Muerto'}</p>
       </div>
     </>
   )
 }
+CharacterCard.propTypes = {
+  character: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    species: PropTypes.string.isRequired,
+    alive: PropTypes.bool.isRequired,
+  }).isRequired
+}
 
-export default CharacterCard
+export default CharacterCard;

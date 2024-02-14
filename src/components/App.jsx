@@ -43,10 +43,9 @@ function App() {
         </section>
 
         <section>
-          <ul>
-          <CharacterList />
-          </ul>
+          <CharacterList characters={characters}/>
         </section>
+        
       </main>
       <Footer />
     </div>
