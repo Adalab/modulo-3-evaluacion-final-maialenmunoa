@@ -14,16 +14,15 @@ function App() {
   //1. Variables de estado
 
   const [characters, setCharacters] = useState([]);
+  const [nameFilter, setNameFilter] = useState('');
 
   //2. useEffect
 
   useEffect(() => {
-
     fetchCharacters()
       .then(data => {
       setCharacters(data)
     });
-
   }, [])
 
   //3. Funciones de eventos
@@ -39,11 +38,11 @@ function App() {
 
       <main>
         <section>
-          <Filters />
+          <Filters setNameFilter={setNameFilter}/>
         </section>
 
         <section>
-          <CharacterList characters={characters}/>
+          <CharacterList characters={characters} nameFilter={nameFilter} />
         </section>
         
       </main>

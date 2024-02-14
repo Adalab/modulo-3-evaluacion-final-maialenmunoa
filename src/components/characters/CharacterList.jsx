@@ -1,19 +1,19 @@
 import PropTypes from "prop-types";
 
-import CharacterCard from "./CharacterCard";
+import CharacterCard from './CharacterCard';
 
-function CharacterList ( {characters} ) {
-  const renderCharacters = characters.map( (character) => {
-    return (
-    <li key={character.id}>
-          <CharacterCard character={character} />
-    </li>
-    );
-  });
+function CharacterList({ characters, nameFilter }) {
+  // Filtrar los personajes según el filtro de nombre
+  const filteredCharacters = characters.filter(character =>
+    character.name.toLowerCase().includes(nameFilter.toLowerCase())
+  );
+
   return (
-    <ul>
-      {renderCharacters}
-    </ul>
+    <div>
+      {filteredCharacters.map(character => (
+        <CharacterCard key={character.id} character={character} />
+      ))}
+    </div>
   );
 }
 
@@ -24,9 +24,10 @@ CharacterList.propTypes = {
       image: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       species: PropTypes.string.isRequired,
-      alive: PropTypes.string.isRequired
+      alive: PropTypes.bool.isRequired
     })
-  ).isRequired
-}
-  
-export default CharacterList
+  ).isRequired,
+  nameFilter: PropTypes.string.isRequired
+};
+
+export default CharacterList;
