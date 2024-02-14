@@ -27,7 +27,7 @@ function App() {
         <section>
           <ul>
             <li>
-              <img src="character-image.jpg" alt="Character Name" />
+              <img src="character-image.jpg" alt="" />
               <div className="character-info">
                 <h1>Harry Potter</h1>
                 <p>Wizard</p>
@@ -35,7 +35,7 @@ function App() {
               </div>
             </li>
             <li>
-              <img src="character-image.jpg" alt="Character Name" />
+              <img src="character-image.jpg" alt="" />
               <div className="character-info">
                 <h1>Harry Potter</h1>
                 <p>Wizard</p>
@@ -43,7 +43,7 @@ function App() {
               </div>
             </li>
             <li>
-              <img src="character-image.jpg" alt="Character Name" />
+              <img src="character-image.jpg" alt="" />
               <div className="character-info">
                 <h1>Harry Potter</h1>
                 <p>Wizard</p>
