@@ -3,22 +3,23 @@ import PropTypes from "prop-types";
 import CharacterFilter from "./CharacterFilter";
 import HouseFilter from "./HouseFilter";
 
-function Filters({ setNameFilter }) {
+function Filters({ setCharacterFilter, setHouseFilter }) {
     return (
       <form>
         <label htmlFor="character-filter">Buscar por personaje:
-        <CharacterFilter setNameFilter={setNameFilter} />
+        <CharacterFilter setCharacterFilter={setCharacterFilter} />
         </label>
         
         <label htmlFor="house-filter">Selecciona la casa:
-        <HouseFilter />
+        <HouseFilter setHouseFilter={setHouseFilter} />
         </label>
       </form>
     )
   }
 
 Filters.propTypes = {
-  setNameFilter: PropTypes.func.isRequired
+  setCharacterFilter: PropTypes.func.isRequired,
+  setHouseFilter: PropTypes.func.isRequired
 }
   
 export default Filters

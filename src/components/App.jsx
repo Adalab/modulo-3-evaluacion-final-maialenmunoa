@@ -14,7 +14,8 @@ function App() {
   //1. Variables de estado
 
   const [characters, setCharacters] = useState([]);
-  const [nameFilter, setNameFilter] = useState('');
+  const [characterFilter, setCharacterFilter] = useState('');
+  const [houseFilter, setHouseFilter] = useState('all');
 
   //2. useEffect
 
@@ -38,11 +39,11 @@ function App() {
 
       <main>
         <section>
-          <Filters setNameFilter={setNameFilter}/>
+          <Filters setCharacterFilter={setCharacterFilter} setHouseFilter={setHouseFilter} />
         </section>
 
         <section>
-          <CharacterList characters={characters} nameFilter={nameFilter} />
+          <CharacterList characters={characters} characterFilter={characterFilter} houseFilter={houseFilter}/>
         </section>
         
       </main>

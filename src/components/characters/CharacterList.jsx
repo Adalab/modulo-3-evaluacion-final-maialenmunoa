@@ -1,16 +1,26 @@
 import PropTypes from "prop-types";
 
-import CharacterCard from './CharacterCard';
+import CharacterCard from "./CharacterCard";
 
-function CharacterList({ characters, nameFilter }) {
-  // Filtrar los personajes según el filtro de nombre
-  const filteredCharacters = characters.filter(character =>
-    character.name.toLowerCase().includes(nameFilter.toLowerCase())
-  );
+function CharacterList({ characters, characterFilter, houseFilter }) {
+  // // Filtrar los personajes según el filtro de nombre
+  // const filteredCharacters = characters.filter(character =>
+  //   character.name.toLowerCase().includes(characterFilter.toLowerCase())
+  // );
+
+    const filteredCharacters = characters.filter(character => {
+      // Filtrar por nombre
+      const characterMatch = character.name.toLowerCase().includes(characterFilter.toLowerCase());
+  
+      // Filtrar por casa
+      const houseMatch = houseFilter === 'all' || character.house === houseFilter;
+  
+      return characterMatch && houseMatch;
+    });
 
   return (
     <div>
-      {filteredCharacters.map(character => (
+      {filteredCharacters.map((character) => (
         <CharacterCard key={character.id} character={character} />
       ))}
     </div>
@@ -24,10 +34,11 @@ CharacterList.propTypes = {
       image: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       species: PropTypes.string.isRequired,
-      alive: PropTypes.bool.isRequired
+      alive: PropTypes.bool.isRequired,
     })
   ).isRequired,
-  nameFilter: PropTypes.string.isRequired
+  characterFilter: PropTypes.string.isRequired,
+  houseFilter: PropTypes.string.isRequired,
 };
 
 export default CharacterList;

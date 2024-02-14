@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-function CharacterFilter({ setNameFilter }) {
+function CharacterFilter({ setCharacterFilter }) {
   const handleNameChange = (event) => {
-    setNameFilter(event.target.value.toLowerCase());
+    setCharacterFilter(event.target.value.toLowerCase());
   };
 
   return (
@@ -18,7 +18,7 @@ function CharacterFilter({ setNameFilter }) {
 }
 
 CharacterFilter.propTypes = {
-  setNameFilter: PropTypes.func.isRequired,
+  setCharacterFilter: PropTypes.func.isRequired,
 };
 
 export default CharacterFilter;
