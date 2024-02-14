@@ -1,6 +1,6 @@
 import CharacterCard from "./CharacterCard";
 
-function CharacterList() {
+function CharacterList () {
     return (
       <>
         <li>
