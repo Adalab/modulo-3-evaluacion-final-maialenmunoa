@@ -18,6 +18,10 @@ function CharacterList({ characters, characterFilter, houseFilter }) {
       return characterMatch && houseMatch;
     });
 
+    if (filteredCharacters.length === 0 && characterFilter.trim() !== '') {
+      return <p>No hay ningún personaje que coincida con la palabra {characterFilter}</p>;
+    }
+
   return (
     <div>
       {filteredCharacters.map((character) => (
