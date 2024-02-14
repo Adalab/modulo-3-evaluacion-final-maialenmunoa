@@ -1,61 +1,28 @@
 import '../scss/App.scss'
 
+import Header from './Header'
+import Footer from './Footer'
+import Filters from './filters/Filters'
+import CharacterList from './characters/CharacterList'
+
 function App() {
   return (
-    <div>
-      <header>Personajes de Harry Potter
-      <img src="" alt="" />
-      </header>
+    <div className="page">
+
+    <Header />
 
       <main>
         <section>
-          <form>
-            <label htmlFor="character-filter">Buscar por personaje:</label>
-            <input type="text" id="character-filter" placeholder="Nombre del personaje" />
-        
-            <label htmlFor="house-filter">Selecciona la casa:</label>
-            <select id="house-filter">
-              <option value="all">Todas</option>
-              <option value="Gryffindor">Gryffindor</option>
-              <option value="Slytherin">Slytherin</option>
-              <option value="Hufflepuff">Hufflepuff</option>
-              <option value="Ravenclaw">Ravenclaw</option>
-            </select>
-          </form>
+          <Filters />
         </section>
 
         <section>
           <ul>
-            <li>
-              <img src="character-image.jpg" alt="" />
-              <div className="character-info">
-                <h1>Harry Potter</h1>
-                <p>Wizard</p>
-                <span className="status-icon alive">Vivo o muerto</span>
-              </div>
-            </li>
-            <li>
-              <img src="character-image.jpg" alt="" />
-              <div className="character-info">
-                <h1>Harry Potter</h1>
-                <p>Wizard</p>
-                <span className="status-icon alive">Vivo o muerto</span>
-              </div>
-            </li>
-            <li>
-              <img src="character-image.jpg" alt="" />
-              <div className="character-info">
-                <h1>Harry Potter</h1>
-                <p>Wizard</p>
-                <span className="status-icon alive">Vivo o muerto</span>
-              </div>
-            </li>
+          <CharacterList />
           </ul>
         </section>
       </main>
-      <footer>
-        <p>Harry Potter &copy; 2021</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
