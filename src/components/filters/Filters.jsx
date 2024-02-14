@@ -1,12 +1,12 @@
-import CharacterFilter from "./CharacterFilter"
-import CharacterHouse from "./CharacterHouse"
+import CharacterFilter from "./CharacterFilter";
+import HouseFilter from "./HouseFilter";
 
 function Filters() {
     return (
       <form>
         
         <CharacterFilter />
-        <CharacterHouse />
+        <HouseFilter />
 
       </form>
     )
