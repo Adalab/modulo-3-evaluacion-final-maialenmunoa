@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function CharacterFilter({ setCharacterFilter }) {
+function CharacterFilter({ characterFilter, setCharacterFilter }) {
   const handleNameChange = (event) => {
     setCharacterFilter(event.target.value.toLowerCase());
   };
@@ -11,6 +11,7 @@ function CharacterFilter({ setCharacterFilter }) {
         type="text"
         id="character-filter"
         placeholder="Nombre del personaje"
+        value = {characterFilter}
         onChange={handleNameChange}
       />
     </>
@@ -19,6 +20,7 @@ function CharacterFilter({ setCharacterFilter }) {
 
 CharacterFilter.propTypes = {
   setCharacterFilter: PropTypes.func.isRequired,
+  characterFilter: PropTypes.string.isRequired,
 };
 
 export default CharacterFilter;
