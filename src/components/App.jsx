@@ -7,23 +7,29 @@ import CharacterList from './characters/CharacterList'
 
 import { fetchCharacters } from '../services/fetch.js';
 
+import localStorage from '../services/localStorage.js';
+
 import '../scss/App.scss'
 
 function App() {
 
   //1. Variables de estado
 
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState( localStorage.get('characters', []) );
   const [characterFilter, setCharacterFilter] = useState('');
   const [houseFilter, setHouseFilter] = useState('all');
 
   //2. useEffect
 
   useEffect(() => {
-    fetchCharacters()
-      .then(data => {
-      setCharacters(data)
-    });
+
+    if (!localStorage.includes('characters')) {
+      fetchCharacters()
+        .then(data => {
+        setCharacters(data);
+        localStorage.set('characters', data);
+     });
+    }
   }, [])
 
   //3. Funciones de eventos
