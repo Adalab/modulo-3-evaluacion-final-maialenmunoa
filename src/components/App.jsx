@@ -74,8 +74,6 @@ function App() {
           <Header />
           <section>
             <Filters
-                  // characterFilter={characterFilter}
-                  // houseFilter={houseFilter}
                   setCharacterFilter={handleCharacterFilter}
                   setHouseFilter={handleHouseFilter}
                   characterInputValue={characterInputValue}
