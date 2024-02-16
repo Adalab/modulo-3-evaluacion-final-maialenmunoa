@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 
 import CharacterCard from "./CharacterCard";
 
+import '../../scss/List.scss';
+
 function CharacterList({ characters, characterFilter, houseFilter }) {
   // // Filtrar los personajes según el filtro de nombre
   // const filteredCharacters = characters.filter(character =>
@@ -23,7 +25,7 @@ function CharacterList({ characters, characterFilter, houseFilter }) {
     }
 
   return (
-    <div>
+    <div className="list">
       {filteredCharacters.map((character) => (
         <CharacterCard key={character.id} character={character} />
       ))}
