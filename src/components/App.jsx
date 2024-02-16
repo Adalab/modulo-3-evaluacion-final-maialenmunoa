@@ -4,10 +4,13 @@ import Header from './Header'
 import Footer from './Footer'
 import Filters from './filters/Filters'
 import CharacterList from './characters/CharacterList'
+import CharacterDetail from './characters/CharacterDetail'
+import HomePage from './pages/HomePage'
 
 import { fetchCharacters } from '../services/fetch.js';
 
 import localStorage from '../services/localStorage.js';
+import { Route, Routes } from "react-router-dom";
 
 import '../scss/App.scss'
 
@@ -36,6 +39,10 @@ function App() {
 
   //4. Variables para el html
 
+  const findCharacter = (id) => {
+    return characters.find((character) => character.id === id);
+  };
+
   //5. Html en el return
 
   return (
@@ -44,15 +51,22 @@ function App() {
     <Header />
 
       <main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/personajes" element={
         <section>
           <Filters setCharacterFilter={setCharacterFilter} setHouseFilter={setHouseFilter} />
-        </section>
-
-        <section>
           <CharacterList characters={characters} characterFilter={characterFilter} houseFilter={houseFilter}/>
         </section>
-        
+         } />
+
+        <Route path="/personaje/:id" element={
+          <CharacterDetail findCharacter={findCharacter} />
+        } />
+      </Routes>
+
       </main>
+
       <Footer />
     </div>
   );

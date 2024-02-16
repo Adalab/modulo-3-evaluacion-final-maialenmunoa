@@ -1,5 +1,11 @@
-function CharacterDetail() {
-    const character = character
+import PropTypes from "prop-types";
+import {  Link, useParams } from "react-router-dom";
+
+function CharacterDetail( {findCharacter}) {
+
+  const params = useParams();
+
+  const character = findCharacter(params.id)
 
     return (
       <>
@@ -13,9 +19,22 @@ function CharacterDetail() {
           <p>{character.species}</p>
           <p>{character.gender}</p>
           <p>{character.house}</p>
+          <Link to="/personajes">Volver</Link>
         </div>
       </>
     )
   }
+
+CharacterDetail.propTypes = {
+  findCharacter: PropTypes.func.isRequired,
+  character: PropTypes.shape({
+    image: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    alive: PropTypes.bool.isRequired,
+    species: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired,
+  }).isRequired,
+};
   
-  export default CharacterDetail;
+export default CharacterDetail;
