@@ -22,6 +22,9 @@ function App() {
   const [characterFilter, setCharacterFilter] = useState('');
   const [houseFilter, setHouseFilter] = useState('all');
 
+  // Guardar el estado del filtro de personaje en el estado de App
+  const [characterInputValue, setCharacterInputValue] = useState('');
+
   //2. useEffect
 
   useEffect(() => {
@@ -39,6 +42,8 @@ function App() {
 
   const handleCharacterFilter = (value) => {
     setCharacterFilter(value.toLowerCase());
+    // Guardar el valor del input en el estado de App
+    setCharacterInputValue(value);
   };
 
   const handleHouseFilter = (value) => {
@@ -68,6 +73,7 @@ function App() {
                   houseFilter={houseFilter}
                   setCharacterFilter={handleCharacterFilter}
                   setHouseFilter={handleHouseFilter}
+                  characterInputValue={characterInputValue}
                 />
             <CharacterList
                   characters={characters}
