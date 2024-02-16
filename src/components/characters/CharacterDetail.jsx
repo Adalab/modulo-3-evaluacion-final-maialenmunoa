@@ -27,14 +27,6 @@ function CharacterDetail( {findCharacter}) {
 
 CharacterDetail.propTypes = {
   findCharacter: PropTypes.func.isRequired,
-  character: PropTypes.shape({
-    image: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    alive: PropTypes.bool.isRequired,
-    species: PropTypes.string.isRequired,
-    gender: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired,
-  }).isRequired,
 };
   
 export default CharacterDetail;

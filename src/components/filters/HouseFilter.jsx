@@ -9,7 +9,7 @@ function HouseFilter( { setHouseFilter, houseFilter } ) {
     return (
       <>
         <select id="house-filter" 
-          value = {houseFilter}
+          value={houseFilter}
           onChange={handleHouseChange}>
           <option value="all">Todas</option>
           <option value="Gryffindor">Gryffindor</option>

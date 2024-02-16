@@ -5,7 +5,7 @@ import Footer from './Footer'
 import Filters from './filters/Filters'
 import CharacterList from './characters/CharacterList'
 import CharacterDetail from './characters/CharacterDetail'
-import HomePage from './pages/HomePage'
+import HomePage from './HomePage.jsx'
 
 import { fetchCharacters } from '../services/fetch.js';
 

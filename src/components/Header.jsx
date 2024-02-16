@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import HogwartsLogo from '../images/harry_potter_hogwarts_logo.png';
+import HogwartsLogo from '../images/harry-potter-logo.png';
 import HouseShield from '../images/harry_potter_escudo.png';
 
 import '../scss/Header.scss';
