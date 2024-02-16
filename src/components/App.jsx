@@ -47,27 +47,31 @@ function App() {
 
   return (
     <div className="page">
-
-    <Header />
-
       <main>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/personajes" element={
-        <section>
-          <Filters setCharacterFilter={setCharacterFilter} setHouseFilter={setHouseFilter} />
-          <CharacterList characters={characters} characterFilter={characterFilter} houseFilter={houseFilter}/>
-        </section>
+          <div>
+          <Header />
+          <section>
+            <Filters setCharacterFilter={setCharacterFilter} setHouseFilter={setHouseFilter} />
+            <CharacterList characters={characters} characterFilter={characterFilter} houseFilter={houseFilter}/>
+          </section>
+          <Footer />
+          </div>
          } />
 
         <Route path="/personaje/:id" element={
-          <CharacterDetail findCharacter={findCharacter} />
+          <div>
+            <Header />
+            <CharacterDetail findCharacter={findCharacter} />
+            <Footer />
+          </div>
         } />
       </Routes>
 
       </main>
-
-      <Footer />
     </div>
   );
 }
