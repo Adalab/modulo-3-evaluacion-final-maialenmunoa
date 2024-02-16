@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function HouseFilter( { setHouseFilter } ) {
+function HouseFilter( { setHouseFilter, houseFilter } ) {
 
     const handleHouseChange = event => {
       setHouseFilter(event.target.value);
@@ -8,7 +8,9 @@ function HouseFilter( { setHouseFilter } ) {
 
     return (
       <>
-        <select id="house-filter" onChange={handleHouseChange}>
+        <select id="house-filter" 
+          value = {houseFilter}
+          onChange={handleHouseChange}>
           <option value="all">Todas</option>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Ravenclaw">Ravenclaw</option>
@@ -20,6 +22,7 @@ function HouseFilter( { setHouseFilter } ) {
   }
 
 HouseFilter.propTypes = {
+  houseFilter: PropTypes.string.isRequired,
   setHouseFilter: PropTypes.func.isRequired,
 };
   
