@@ -50,6 +50,11 @@ function App() {
     setHouseFilter(value);
   };
 
+  const handleReset = () => {
+    setCharacterFilter('');
+    setHouseFilter('all');
+  };
+
   //4. Variables para el html
 
   const findCharacter = (id) => {
@@ -69,11 +74,12 @@ function App() {
           <Header />
           <section>
             <Filters
-                  characterFilter={characterFilter}
-                  houseFilter={houseFilter}
+                  // characterFilter={characterFilter}
+                  // houseFilter={houseFilter}
                   setCharacterFilter={handleCharacterFilter}
                   setHouseFilter={handleHouseFilter}
                   characterInputValue={characterInputValue}
+                  handleReset={handleReset}
                 />
             <CharacterList
                   characters={characters}
