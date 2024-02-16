@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function CharacterFilter({ characterFilter, setCharacterFilter }) {
   const handleNameChange = (event) => {
-    setCharacterFilter(event.target.value.toLowerCase());
+    setCharacterFilter(event.target.value);
   };
 
   return (

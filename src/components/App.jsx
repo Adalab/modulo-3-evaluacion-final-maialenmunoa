@@ -37,6 +37,14 @@ function App() {
 
   //3. Funciones de eventos
 
+  const handleCharacterFilter = (value) => {
+    setCharacterFilter(value.toLowerCase());
+  };
+
+  const handleHouseFilter = (value) => {
+    setHouseFilter(value);
+  };
+
   //4. Variables para el html
 
   const findCharacter = (id) => {
@@ -55,8 +63,17 @@ function App() {
           <div>
           <Header />
           <section>
-            <Filters setCharacterFilter={setCharacterFilter} setHouseFilter={setHouseFilter} />
-            <CharacterList characters={characters} characterFilter={characterFilter} houseFilter={houseFilter}/>
+            <Filters
+                  characterFilter={characterFilter}
+                  houseFilter={houseFilter}
+                  setCharacterFilter={handleCharacterFilter}
+                  setHouseFilter={handleHouseFilter}
+                />
+            <CharacterList
+                  characters={characters}
+                  characterFilter={characterFilter}
+                  houseFilter={houseFilter}
+                />
           </section>
           <Footer />
           </div>
