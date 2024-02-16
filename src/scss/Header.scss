@@ -1,0 +1,24 @@
+.header {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+        height: 100%;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__shield {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
