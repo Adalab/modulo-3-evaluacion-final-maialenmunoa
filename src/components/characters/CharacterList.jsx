@@ -5,10 +5,6 @@ import CharacterCard from "./CharacterCard";
 import '../../scss/List.scss';
 
 function CharacterList({ characters, characterFilter, houseFilter }) {
-  // // Filtrar los personajes según el filtro de nombre
-  // const filteredCharacters = characters.filter(character =>
-  //   character.name.toLowerCase().includes(characterFilter.toLowerCase())
-  // );
 
     const filteredCharacters = characters.filter(character => {
       // Filtrar por nombre
@@ -21,7 +17,7 @@ function CharacterList({ characters, characterFilter, houseFilter }) {
     });
 
     if (filteredCharacters.length === 0 && characterFilter.trim() !== '') {
-      return <p>No hay ningún personaje que coincida con la palabra &quot;{characterFilter}&quot;</p>;
+      return <p className="list__error">No hay ningún personaje que coincida con la palabra &quot;{characterFilter}&quot;</p>;
     }
 
   return (

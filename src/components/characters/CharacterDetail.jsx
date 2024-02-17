@@ -28,7 +28,7 @@ function CharacterDetail( {findCharacter}) {
       houseImage = hufflepuffImage;
       break;
     default:
-      houseImage = ""; // Puedes proporcionar una imagen por defecto o dejarla vacía si no hay ninguna imagen para la casa desconocida.
+      houseImage = ""; 
   }
 
     return (
@@ -47,7 +47,15 @@ function CharacterDetail( {findCharacter}) {
               )}</p>
               <p>Especie: {character.species}</p>
               <p>Género: {character.gender}</p>
-              <p>Nombre alternativo: {character.alternate_names}</p>
+              {character.alternate_names && character.alternate_names.length > 0 && (
+            <p>Nombre alternativo: {character.alternate_names.map((name, index) => {
+              if (index === character.alternate_names.length - 1) {
+                return name;
+              } else {
+                return `${name}, `;
+              }
+            })}</p>
+          )}
               <p>Casa: {character.house}</p>
               {houseImage && <img className="detail__content-shield" src={houseImage} alt={character.house} />}
               <Link to="/personajes">
