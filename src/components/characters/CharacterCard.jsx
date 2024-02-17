@@ -2,11 +2,13 @@ import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
 
+import '../../scss/Card.scss';
+
 function CharacterCard( {character} ) {
   return (
     <Link to={"/personaje/" + character.id}>
-      <div>
-        <img 
+      <div className="character">
+        <img className="character__image"
         src={character.image ||
             "https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter"} 
             alt={character.name} />
