@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import {  Link, useParams } from "react-router-dom";
 
 import '../../scss/Detail.scss';
+import Shield from '../../images/harry_potter_escudo.png';
 
 function CharacterDetail( {findCharacter}) {
 
@@ -26,6 +27,7 @@ function CharacterDetail( {findCharacter}) {
               <p>{character.species}</p>
               <p>{character.gender}</p>
               <p>{character.house}</p>
+              <img className="detail__content-shield" src={Shield} alt=""/>
               <Link to="/personajes">
                 <button className="detail__content-info-button">VOLVER</button>
               </Link>

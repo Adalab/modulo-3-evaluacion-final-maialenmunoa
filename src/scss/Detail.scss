@@ -28,6 +28,12 @@
         object-fit: cover;
     }
 
+    &__content-shield {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+    }
+
     &__content-info {
         display: flex;
         flex-flow: column nowrap;
@@ -51,7 +57,7 @@
         border: none;
         transition: background-color 0.3s ease;
         cursor: pointer;
-        margin-top: 20px;
+        margin-top: 10px;
         color: white;
 
             &:hover {
