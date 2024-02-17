@@ -1,0 +1,35 @@
+.form {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0 25px;
+
+    &__input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #73151E;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+
+    &__reset {
+        align-items: center;
+        background-color: #73151E;
+        border: 1px solid red;
+        border-radius: 30px;
+        color: #fff;
+        display: flex;
+        font-size: 1.5rem;
+        grid-column: 2;
+        grid-row: 1/2;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        margin: 10px;
+        cursor: pointer;
+        transition: all .4s ease;
+    }
+}

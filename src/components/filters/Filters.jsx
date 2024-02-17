@@ -3,19 +3,23 @@ import PropTypes from "prop-types";
 import CharacterFilter from "./CharacterFilter";
 import HouseFilter from "./HouseFilter";
 
+import '../../scss/Form.scss';
+
 function Filters({ setCharacterFilter, setHouseFilter, characterInputValue, handleReset }) {
     return (
-      <form>
-        <label htmlFor="character-filter">Buscar por personaje:
+      <form className="form">
+        <label htmlFor="character-filter">
         <CharacterFilter 
           setCharacterFilter={setCharacterFilter} 
           characterInputValue={characterInputValue} />
         </label>
         
-        <label htmlFor="house-filter">Selecciona la casa:
+        <label htmlFor="house-filter">
         <HouseFilter setHouseFilter={setHouseFilter} />
         </label>
-        <button type="button" onClick={handleReset}>Reset</button>
+        <button className="form__reset" type="button" onClick={handleReset}>
+          <span className="form__trash-icon"><i className="fa-solid fa-trash-can"></i></span>
+        </button>
       </form>
     )
   }

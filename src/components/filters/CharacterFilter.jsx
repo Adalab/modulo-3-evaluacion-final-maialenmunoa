@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 
+import '../../scss/Form.scss';
+
+
 function CharacterFilter({ setCharacterFilter, characterInputValue}) {
   const handleNameChange = (event) => {
     setCharacterFilter(event.target.value.toLowerCase());
@@ -7,10 +10,10 @@ function CharacterFilter({ setCharacterFilter, characterInputValue}) {
 
   return (
     <>
-      <input
+      <input className="form__input"
         type="text"
         id="character-filter"
-        placeholder="Nombre del personaje"
+        placeholder="Busca por personaje"
         value = {characterInputValue}
         onChange={handleNameChange}
       />

@@ -2,15 +2,16 @@ import PropTypes from "prop-types";
 
 function HouseFilter( { setHouseFilter, houseFilter } ) {
 
-    const handleHouseChange = event => {
-      setHouseFilter(event.target.value);
-    };
+  const handleHouseChange = event => {
+    setHouseFilter(event.target.value);
+  };
 
     return (
       <>
-        <select id="house-filter" 
+        <select className="form__input" id="house-filter" 
           value={houseFilter}
           onChange={handleHouseChange}>
+          <option value="" disabled selected hidden>Selecciona la casa</option>
           <option value="all">Todas</option>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Ravenclaw">Ravenclaw</option>
