@@ -37,9 +37,25 @@
         }
     }
 
+    @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      
+      &__content-typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 auto; /* Para centrar el texto */
+        animation: typing 10s steps(40, end); /* Ajusta la duración y la velocidad de escritura aquí */
+      }
+
     &__content-link {
         padding: 10px 20px;
-        background-color: #f69952;
+        background-color: #C78E1C;
         border-radius: 5px;
         transition: background-color 0.3s ease;
 
