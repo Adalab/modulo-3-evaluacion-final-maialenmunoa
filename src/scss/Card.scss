@@ -17,9 +17,9 @@
     text-align: center;
     transition: transform 0.3s ease;
 
-        &:hover {
-            transform: scale(1.05);
-        }
+    &:hover {
+        transform: scale(1.05);
+    }
 
     &__image {
         pointer-events: none;
@@ -52,5 +52,29 @@
 
     &____info-text-icon {
         font-size: 1.5rem;
+    }
+
+    // Media queries
+    @media screen and (max-width: 768px) {
+        padding: 5px;
+    }
+
+    @media screen and (max-width: 480px) {
+        &__image {
+            max-width: 200px;
+            height: 300px;
+        }
+
+        &__info-name {
+            font-size: 1.3rem;
+        }
+
+        &__info-text {
+            font-size: 1rem;
+        }
+
+        &____info-text-icon {
+            font-size: 1.3rem;
+        }
     }
 }

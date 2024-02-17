@@ -28,8 +28,7 @@
     &__content-text {
         font-size: 1.5rem;
         margin-bottom: 20px;
-        //texto con movimiento
-        animation: move 2s infinite;
+        animation: move 2s infinite; /* Animación de movimiento */
         @keyframes move{    
             0% {transform: translateY(0);}
             50% {transform: translateY(10px);}
@@ -37,21 +36,12 @@
         }
     }
 
-    @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-      
-      &__content-typewriter {
+    &__content-typewriter {
         overflow: hidden;
         white-space: nowrap;
         margin: 0 auto; /* Para centrar el texto */
         animation: typing 10s steps(40, end); /* Ajusta la duración y la velocidad de escritura aquí */
-      }
+    }
 
     &__content-link {
         padding: 10px 20px;
@@ -59,9 +49,9 @@
         border-radius: 5px;
         transition: background-color 0.3s ease;
 
-            &:hover {
-                background-color: #000000;
-            }
+        &:hover {
+            background-color: #000000;
+        }
     }
 
     &__content-button {
@@ -73,5 +63,24 @@
         font-size: 1rem;
         cursor: pointer;
         transition: transform 0.3s ease;
+    }
+
+    // Media queries
+    @media screen and (max-width: 768px) {
+        &__content {
+            padding: 0 10px; /* Reducción del relleno en dispositivos más pequeños */
+        }
+
+        &__content-logo {
+            width: 90%; /* Ajuste del ancho del logo para dispositivos más pequeños */
+        }
+
+        &__content-title {
+            font-size: 2rem; /* Ajuste del tamaño del título para dispositivos más pequeños */
+        }
+
+        &__content-text {
+            font-size: 1.2rem; /* Ajuste del tamaño del texto para dispositivos más pequeños */
+        }
     }
 }

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {  NavLink, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import gryffindorImage from '../../images/gryffindor.png';
 import ravenclawImage from '../../images/revenclaw.png';
@@ -49,9 +49,9 @@ function CharacterDetail( {findCharacter}) {
               <p>{character.gender}</p>
               <p>{character.house}</p>
               {houseImage && <img className="detail__content-shield" src={houseImage} alt={character.house} />}
-              <NavLink to="/personajes" smooth>
+              <Link to="/personajes">
                 <button className="detail__content-info-button">VOLVER</button>
-              </NavLink>
+              </Link>
             </div>
         </div>
       </div>

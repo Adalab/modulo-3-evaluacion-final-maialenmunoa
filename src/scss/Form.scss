@@ -33,4 +33,31 @@
         cursor: pointer;
         transition: all .4s ease;
     }
+
+    // Media queries
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+
+
+        &__input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        &__reset {
+            margin: 10px auto;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__input {
+            font-size: 1rem;
+        }
+
+        &__reset {
+            font-size: 1.2rem;
+        }
+    }
 }

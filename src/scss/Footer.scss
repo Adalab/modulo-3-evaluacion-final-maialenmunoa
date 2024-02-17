@@ -37,11 +37,13 @@
     }
 
     &__btn-up {
-        top: 4cm; /* Mueve el botón hacia abajo para dar espacio desde el borde superior del footer */
-        right: 10px; /* Mueve el botón hacia la izquierda para dar espacio desde el borde derecho del footer */
-        margin-right: 10px; /* Espacio adicional desde el borde derecho */
-        margin-top: 140px; /* Espacio adicional desde el borde superior */
-        cursor: pointer;
+        // Media queries
+        @media screen and (max-width: 768px) {
+            top: auto; /* Elimina la posición superior */
+            bottom: 20px; /* Posiciona el botón hacia arriba desde el borde inferior */
+            right: 20px; /* Ajusta la posición desde el borde derecho */
+            margin: 0; /* Elimina los márgenes */
+        }
     }
 
     &__btn-up-img {
@@ -51,4 +53,4 @@
         border-radius: 50%;
         z-index: 999;
     }
-  }
+}
