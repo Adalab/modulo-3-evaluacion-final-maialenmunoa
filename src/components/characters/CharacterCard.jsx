@@ -14,8 +14,15 @@ function CharacterCard( {character} ) {
             alt={character.name} />
         <div className="character__info">
           <h1 className="character__info-name">{character.name}</h1>
-          <p>{character.species}</p>
-          <p>{character.alive ? 'Vivo' : 'Muerto'}</p>
+          <div className="character__info-text">
+            <p>{character.species}</p>
+            <p className="character__info-text-icon">{character.alive ? (
+                <span className="alive-icon"><i className="fas fa-heart"></i></span>
+              ) : (
+                <span className="dead-icon"><i className="fas fa-skull"></i></span>
+              )}
+            </p>
+          </div>
         </div>
       </div>
     </Link>
