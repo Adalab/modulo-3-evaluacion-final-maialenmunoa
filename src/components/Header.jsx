@@ -9,7 +9,7 @@ import '../scss/Header.scss';
 function Header() {
   return (
     <Link to="/personajes">
-      <header className="header">
+      <header className="header" id="Header">
           <img className="header__shield" src={HouseShield} alt="Escudo Harry Potter" />
           <img className="header__logo" src={HogwartsLogo} alt="Logo Hogwarts de Harry Potter" />
       </header>
