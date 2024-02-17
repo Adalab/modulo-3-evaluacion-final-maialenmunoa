@@ -12,6 +12,8 @@ export function fetchCharacters() {
                 species: eachCharacter.species,
                 house: eachCharacter.house,
                 alive: eachCharacter.alive,
+                gender: eachCharacter.gender,
+                alternate_names: eachCharacter.alternate_names,
                 }
             }
         )

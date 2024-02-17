@@ -45,9 +45,10 @@ function CharacterDetail( {findCharacter}) {
               ) : (
                 <span className="dead-icon"><i className="fas fa-skull"></i></span>
               )}</p>
-              <p>{character.species}</p>
-              <p>{character.gender}</p>
-              <p>{character.house}</p>
+              <p>Especie: {character.species}</p>
+              <p>Género: {character.gender}</p>
+              <p>Nombre alternativo: {character.alternate_names}</p>
+              <p>Casa: {character.house}</p>
               {houseImage && <img className="detail__content-shield" src={houseImage} alt={character.house} />}
               <Link to="/personajes">
                 <button className="detail__content-info-button">VOLVER</button>
