@@ -12,8 +12,8 @@ function CharacterCard( {character} ) {
         src={character.image ||
             "https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter"} 
             alt={character.name} />
-        <div className="character-info">
-          <h1>{character.name}</h1>
+        <div className="character__info">
+          <h1 className="character__info-name">{character.name}</h1>
           <p>{character.species}</p>
           <p>{character.alive ? 'Vivo' : 'Muerto'}</p>
         </div>
