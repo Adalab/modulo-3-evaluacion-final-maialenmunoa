@@ -20,7 +20,7 @@ function App() {
 
   const [characters, setCharacters] = useState( localStorage.get('characters', []) );
   const [characterFilter, setCharacterFilter] = useState('');
-  const [houseFilter, setHouseFilter] = useState('all');
+  const [houseFilter, setHouseFilter] = useState('Gryffindor');
 
   // Guardar el estado del filtro de personaje en el estado de App
   const [characterInputValue, setCharacterInputValue] = useState('');

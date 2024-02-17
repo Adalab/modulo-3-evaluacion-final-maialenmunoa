@@ -11,12 +11,11 @@ function HouseFilter( { setHouseFilter, houseFilter } ) {
         <select className="form__input" id="house-filter" 
           value={houseFilter}
           onChange={handleHouseChange}>
-          <option value="" disabled selected hidden>Selecciona la casa</option>
-          <option value="all">Todas</option>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Ravenclaw">Ravenclaw</option>
           <option value="Slytherin">Slytherin</option>
           <option value="Hufflepuff">Hufflepuff</option>
+          <option value="all">Todas</option>
         </select>
       </>
     )
