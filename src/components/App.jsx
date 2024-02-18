@@ -16,8 +16,18 @@ function App() {
   const [houseFilter, setHouseFilter] = useState('Gryffindor');
   // Guardar el estado del filtro de personaje en el estado de App
   const [characterInputValue, setCharacterInputValue] = useState('');
+  
   //2. useEffect
-  useEffect(() => { updateFetch() }, [])
+  useEffect(() => { 
+    if (!localStorage.includes('characters')) {
+      fetchCharacters()
+        .then(data => {
+          setCharacters(data);
+          localStorage.set('characters', data);
+        });
+    }
+  }, [])
+
   //3. Funciones de eventos
   const handleCharacterFilter = (value) => {
     setCharacterFilter(value.toLowerCase());
@@ -32,22 +42,15 @@ function App() {
     setHouseFilter('Gryffindor');
   };
   // Ordenar personajes alfabéticamente por nombre
-  const sortedCharacters = characters.slice().sort((a, b) => {
+  const sortedCharacters = characters.sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
-  const updateFetch = () => {
-    if (!localStorage.includes('characters')) {
-      fetchCharacters()
-        .then(data => {
-        setCharacters(data);
-        localStorage.set('characters', data);
-     });
-    }
-  };
+  /*const updateFetch = () => {
+    
+  };*/
 
   //4. Variables para el html
   const findCharacter = (id) => {
-    updateFetch();
     return characters.find((character) => character.id === id);
   };
 
@@ -77,11 +80,15 @@ function App() {
           </div>
          } />
         <Route path="/personaje/:id" element={
-          <div>
-            <Header />
-            <CharacterDetail findCharacter={findCharacter} />
-            <Footer />
-          </div>
+          characters.length === 0 ? (
+            <div>Cargando...</div>
+          ) : (
+            <div>
+              <Header />
+              <CharacterDetail findCharacter={findCharacter} />
+              <Footer />
+            </div>
+          )        
         } />
       </Routes>
       </main>
