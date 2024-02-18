@@ -17,15 +17,7 @@ function App() {
   // Guardar el estado del filtro de personaje en el estado de App
   const [characterInputValue, setCharacterInputValue] = useState('');
   //2. useEffect
-  useEffect(() => {
-    if (!localStorage.includes('characters')) {
-      fetchCharacters()
-        .then(data => {
-        setCharacters(data);
-        localStorage.set('characters', data);
-     });
-    }
-  }, [])
+  useEffect(() => { updateFetch() }, [])
   //3. Funciones de eventos
   const handleCharacterFilter = (value) => {
     setCharacterFilter(value.toLowerCase());
@@ -43,10 +35,22 @@ function App() {
   const sortedCharacters = characters.slice().sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
+  const updateFetch = () => {
+    if (!localStorage.includes('characters')) {
+      fetchCharacters()
+        .then(data => {
+        setCharacters(data);
+        localStorage.set('characters', data);
+     });
+    }
+  };
+
   //4. Variables para el html
   const findCharacter = (id) => {
+    updateFetch();
     return characters.find((character) => character.id === id);
   };
+
   //5. Html en el return
   return (
     <div className="page">
