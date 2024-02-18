@@ -37,7 +37,7 @@ function App() {
   };
   const handleReset = () => {
     setCharacterFilter('');
-    setHouseFilter('all');
+    setHouseFilter('Gryffindor');
   };
   // Ordenar personajes alfabéticamente por nombre
   const sortedCharacters = characters.slice().sort((a, b) => {
