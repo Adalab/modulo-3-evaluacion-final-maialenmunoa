@@ -1,11 +1,20 @@
 import PropTypes from "prop-types";
 
+//Importar componente
 import CharacterCard from "./CharacterCard";
 
+//Importar estilos
 import '../../scss/List.scss';
 
+/**
+ * Componente para la lista de personajes.
+ * @param {Array} characters - Lista de personajes.
+ * @param {string} characterFilter - Filtro de personajes por nombre.
+ * @param {string} houseFilter - Filtro de personajes por casa.
+ * @param {string} genderFilter - Filtro de personajes por género.
+ */
 function CharacterList({ characters, characterFilter, houseFilter, genderFilter }) {
-
+  // Filtrar los personajes según los filtros aplicados
   const filteredCharacters = characters.filter(character => {
     // Filtrar por nombre
     const characterMatch = character.name.toLowerCase().includes(characterFilter.toLowerCase());
@@ -17,13 +26,14 @@ function CharacterList({ characters, characterFilter, houseFilter, genderFilter 
     const genderMatch = !genderFilter || character.gender === genderFilter;
 
     return characterMatch && houseMatch && genderMatch;
-  });
-    
+  });    
 
+  // Mostrar mensaje de error si no se encuentran personajes que coincidan con el filtro
     if (filteredCharacters.length === 0 && characterFilter.trim() !== '') {
       return <p className="list__error">No hay ningún personaje que coincida con la palabra &quot;{characterFilter}&quot;</p>;
     }
-
+    
+   // Mostrar la lista de personajes filtrados
   return (
     <div className="list">
       {filteredCharacters.map((character) => (
