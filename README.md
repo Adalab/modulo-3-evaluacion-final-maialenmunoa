@@ -2,19 +2,23 @@
 
 Este proyecto forma parte de la evaluación final del Módulo 3 del Bootcamp de Programación Web de Adalab. La web está diseñada para buscar, filtrar y mostrar personajes famosos de Harry Potter utilizando tecnologías como React, JavaScript, HTML, y CSS.
 
-## Funcionalidades destacadas
+### **Funcionalidades destacadas**
 
 - Búsqueda de personajes: La aplicación permite buscar personajes de Harry Potter utilizando un formulario intuitivo.
 - Detalle de personaje: Permite ver detalles completos de cada personaje.
 - Filtrado por casa y género: Los usuarios pueden filtrar los personajes por casa y género.
 
-## Tecnologías utilizadas
+### **Tecnologías utilizadas**
 
 - React: para el desarrollo del frontend y la interacción dinámica con el usuario.
 - JavaScript: para manejar la lógica principal del buscador y los componentes interactivos.
 - HTML & CSS: para la estructura y el diseño de la interfaz de usuario.
 - Sass: para la mejora de estilos con el preprocesador Sass.
 - React Router: para la navegación entre diferentes vistas de la aplicación.
+
+## Link Github Pages 🌐
+
+Para ver el proyecto, visita el siguiente enlace: [Buscador de Personajes de Harry Potter](https://beta.adalab.es/modulo-3-evaluacion-final-maialenmunoa/)
 
 ## Uso de Fetch para obtener datos de la API
 
