@@ -23,24 +23,20 @@
     &__content-title {
         font-size: 3rem;
         margin-bottom: 20px;
+        font-family: 'Libre Baskerville', serif;
     }
 
     &__content-text {
         font-size: 1.5rem;
         margin-bottom: 20px;
-        animation: move 2s infinite; /* Animación de movimiento */
+        font-family: 'Libre Baskerville', serif;
+        font-style: italic;
+        animation: move 3s infinite; /* Animación de movimiento */
         @keyframes move{    
             0% {transform: translateY(0);}
             50% {transform: translateY(10px);}
             100% {transform: translateY(0);}
         }
-    }
-
-    &__content-typewriter {
-        overflow: hidden;
-        white-space: nowrap;
-        margin: 0 auto; /* Para centrar el texto */
-        animation: typing 10s steps(40, end); /* Ajusta la duración y la velocidad de escritura aquí */
     }
 
     &__content-link {
@@ -55,12 +51,12 @@
     }
 
     &__content-button {
-        width: 50px;
         border: none;
         background-color: transparent;
+        font-family: 'roboto';
         color:white;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.3rem;
         cursor: pointer;
         transition: transform 0.3s ease;
     }

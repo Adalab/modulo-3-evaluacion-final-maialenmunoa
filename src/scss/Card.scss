@@ -40,14 +40,16 @@
     }
 
     &__info-name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        font-family: 'Libre Baskerville', serif;
         font-weight: bold;
         color:#73151E;
     }
 
     &__info-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: white; 
+        font-family: 'roboto';
     }
 
     &____info-text-icon {

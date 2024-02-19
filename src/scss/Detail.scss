@@ -47,10 +47,13 @@
         text-decoration: none;
         line-height: 1.4;
         padding: 10px;
+        font-family: 'roboto';
+        font-size: 1.1rem;
     }
 
     &__content-info-name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        font-family: 'Libre Baskerville', serif;
         font-weight: bold;
         color:#73151E;
     }
@@ -64,6 +67,8 @@
         cursor: pointer;
         margin-top: 10px;
         color: white;
+        font-size: 1.1rem;
+        font-family: 'roboto';   
 
         &:hover {
             background-color: #73151E;
