@@ -9,7 +9,7 @@
 
     &__logo {
         height: 100%;
-        width: 350px;
+        width:200px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -20,18 +20,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    // Media queries
-    @media screen and (max-width: 768px) {
-        &__logo {
-            width: 250px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        &__logo {
-            width: 200px;
-        }
     }
 }
