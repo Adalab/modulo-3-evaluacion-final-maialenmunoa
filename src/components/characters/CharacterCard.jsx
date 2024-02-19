@@ -2,16 +2,31 @@ import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
 
+import gryffindorImage from '../../images/gryffindor_placeholder.jpg';
+import hufflepuffImage from '../../images/hufflepuff_placeholder.jpg';
+import ravenclawImage from '../../images/ravenclaw_placeholder.jpg';
+import slytherinImage from '../../images/slytherin_placeholder.jpg';
+
 import '../../scss/Card.scss';
 
 function CharacterCard( {character} ) {
+
+  // Definir las imágenes de las casas
+  const houseImages = {
+    Gryffindor: gryffindorImage,
+    Hufflepuff: hufflepuffImage,
+    Ravenclaw: ravenclawImage,
+    Slytherin: slytherinImage,
+  };
+
+  // Obtener la imagen del personaje o la de la casa si no tiene
+  const characterImage = character.image || houseImages[character.house];
+
   return (
     <Link to={"/personaje/" + character.id}>
       <div className="character">
         <img className="character__image"
-        src={character.image ||
-            "https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter"} 
-            alt={character.name} />
+        src={characterImage} />
         <div className="character__info">
           <h1 className="character__info-name">{character.name}</h1>
           <div className="character__info-text">
@@ -35,7 +50,8 @@ CharacterCard.propTypes = {
     species: PropTypes.string.isRequired,
     alive: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired,
-    gender: PropTypes.string
+    gender: PropTypes.string,
+    house: PropTypes.string,
   }).isRequired
 }
 

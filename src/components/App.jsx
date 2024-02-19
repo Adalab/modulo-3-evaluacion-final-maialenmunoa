@@ -7,6 +7,11 @@ import Filters from './filters/Filters'
 import CharacterList from './characters/CharacterList'
 import CharacterDetail from './characters/CharacterDetail'
 
+import gryffindorPlaceholder from '../images/gryffindor_placeholder.jpg';
+import hufflepuffPlaceholder from '../images/hufflepuff_placeholder.jpg';
+import ravenclawPlaceholder from '../images/ravenclaw_placeholder.jpg';
+import slytherinPlaceholder from '../images/slytherin_placeholder.jpg';
+
 import { fetchCharacters } from '../services/fetch.js';
 import localStorage from '../services/localStorage.js';
 import { Route, Routes } from "react-router-dom";
@@ -60,9 +65,23 @@ function App() {
     return character.gender === genderFilter;
   };
 
+  // Define el objeto que mapea cada casa a su imagen de placeholder
+  const housePlaceholders = {
+  Gryffindor: gryffindorPlaceholder,
+  Hufflepuff: hufflepuffPlaceholder,
+  Ravenclaw: ravenclawPlaceholder,
+  Slytherin: slytherinPlaceholder,
+};
+
   // Filtrar por imagen
   const filterByImage = (character) => {
-    return character.image !== 'https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter';
+    // Si el personaje tiene una imagen, devuelve true
+    if (character.image && character.image !== 'https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter') {
+      return true;
+    }
+    // Si el personaje no tiene una imagen, busca la imagen de su casa en el objeto de placeholders
+    const housePlaceholder = housePlaceholders[character.house];
+    return housePlaceholder !== undefined;
   };
 
   // Filtrar personajes
