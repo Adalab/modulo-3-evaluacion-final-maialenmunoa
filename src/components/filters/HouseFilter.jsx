@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
 /**
- * Componente para el filtro de casa.
- * @param {function} setHouseFilter - Función para establecer el filtro de casa.
- * @param {string} houseFilter - Valor actual del filtro de casa.
- */
-function HouseFilter( { setHouseFilter, houseFilter } ) {
+* Componente para el filtro de casa.
+* @param {function} setHouseFilter - Función para establecer el filtro de casa.
+* @param {string} houseInputValue - Valor actual del filtro de casa.
+*/
+function HouseFilter( { setHouseFilter, houseInputValue } ) {
   /**
    * Maneja el cambio en la selección de casa.
    * @param {object} event - Evento de cambio.
@@ -18,7 +18,7 @@ function HouseFilter( { setHouseFilter, houseFilter } ) {
       <>
         {/* Selección de casa */}
         <select className="form__input" id="house-filter" 
-          value={houseFilter}
+          value={houseInputValue}
           onChange={handleHouseChange}
         >
           <option value="Gryffindor">Gryffindor</option>
@@ -34,6 +34,7 @@ function HouseFilter( { setHouseFilter, houseFilter } ) {
 HouseFilter.propTypes = {
   houseFilter: PropTypes.string.isRequired,
   setHouseFilter: PropTypes.func.isRequired,
+  houseInputValue: PropTypes.string.isRequired,
 };
   
 export default HouseFilter;

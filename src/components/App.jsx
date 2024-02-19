@@ -31,9 +31,11 @@ function App() {
   const [houseFilter, setHouseFilter] = useState('Gryffindor');
   const [genderFilter, setGenderFilter] = useState('');
   const [characterInputValue, setCharacterInputValue] = useState('');
-  
+  const [houseInputValue, setHouseInputValue] = useState('Gryffindor');
+
   //2. useEffect para cargar los personajes desde la API
   useEffect(() => { 
+    window.scrollTo(0, 0);
     if (!localStorage.includes('characters')) {
       fetchCharacters()
         .then(data => {
@@ -51,6 +53,7 @@ function App() {
 
   const handleHouseFilter = (value) => {
     setHouseFilter(value);
+    setHouseInputValue(value);
   };
 
   const handleGenderFilter = (value) => {
@@ -62,6 +65,7 @@ function App() {
     setHouseFilter('Gryffindor');
     setGenderFilter('');
     setCharacterInputValue('');
+    setHouseInputValue ('Gryffindor');
   };
 
   // Filtrar personajes por género
@@ -80,9 +84,6 @@ function App() {
 
   // Filtrar personajes por imagen
   const filterByImage = (character) => {
-    if (character.image && character.image !== 'https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter') {
-      return true;
-    }
     // Si el personaje no tiene una imagen, busca la imagen de su casa en el objeto de placeholders
     const housePlaceholder = housePlaceholders[character.house];
     return housePlaceholder !== undefined;
@@ -109,22 +110,25 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/personajes" element={
           <div>
-          <Header />
-          <section>
-            <Filters
-                  setCharacterFilter={handleCharacterFilter}
-                  setHouseFilter={handleHouseFilter}
-                  characterInputValue={characterInputValue}
-                  handleReset={handleReset}
-                  setGenderFilter={handleGenderFilter}
-                />
-            <CharacterList
-                  characters={filteredCharacters}
-                  characterFilter={characterFilter}
-                  houseFilter={houseFilter}
-                  genderFilter={genderFilter}
-                />
-          </section>
+          <div className="body">
+            <Header />
+            <section>
+              <Filters
+                    setCharacterFilter={handleCharacterFilter}
+                    setHouseFilter={handleHouseFilter}
+                    characterInputValue={characterInputValue}
+                    houseInputValue={houseInputValue}
+                    handleReset={handleReset}
+                    setGenderFilter={handleGenderFilter}
+                  />
+              <CharacterList
+                    characters={filteredCharacters}
+                    characterFilter={characterFilter}
+                    houseFilter={houseFilter}
+                    genderFilter={genderFilter}
+                  />
+            </section>
+          </div>
           <Footer />
           </div>
          } />
@@ -133,8 +137,10 @@ function App() {
             <div>Cargando...</div>
           ) : (
             <div>
-              <Header />
-              <CharacterDetail findCharacter={findCharacter} />
+              <div className="body">
+                <Header />
+                <CharacterDetail findCharacter={findCharacter} />
+              </div>
               <Footer />
             </div>
           )        

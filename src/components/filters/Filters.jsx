@@ -14,10 +14,11 @@ import '../../scss/Form.scss';
  * @param {function} setHouseFilter - Función para establecer el filtro de casas.
  * @param {function} setGenderFilter - Función para establecer el filtro de género.
  * @param {string} characterInputValue - Valor actual del filtro de personajes.
+ * @param {string} houseInputValue - Valor actual del filtro de casas.
  * @param {function} handleReset - Función para restablecer todos los filtros.
  */
 
-function Filters({ setCharacterFilter, setHouseFilter, setGenderFilter, characterInputValue, handleReset }) {
+function Filters({ setCharacterFilter, setHouseFilter, setGenderFilter, characterInputValue, houseInputValue, handleReset }) {
     return (
       <form className="form">
         
@@ -25,7 +26,8 @@ function Filters({ setCharacterFilter, setHouseFilter, setGenderFilter, characte
         <label htmlFor="character-filter">
         <CharacterFilter 
           setCharacterFilter={setCharacterFilter} 
-          characterInputValue={characterInputValue} />
+          characterInputValue={characterInputValue} 
+          houseInputValue={houseInputValue}/>
         </label>
         
         {/* Filtro de casa */}
@@ -49,6 +51,7 @@ Filters.propTypes = {
   setCharacterFilter: PropTypes.func.isRequired,
   setHouseFilter: PropTypes.func.isRequired,
   characterInputValue: PropTypes.string.isRequired,
+  houseInputValue: PropTypes.string.isRequired,
   handleReset: PropTypes.func.isRequired,
   setGenderFilter: PropTypes.func.isRequired,
 }
