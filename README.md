@@ -49,7 +49,7 @@ Ejecuta estos comandos en la terminal
 1. **Clona el repositorio**:
 
 ```bash
- git clone https://beta.adalab.es/modulo-2-evaluacion-final-maialenmunoa/
+ git clone https://github.com/Adalab/modulo-3-evaluacion-final-maialenmunoa.git
 ```
 
 2. Instala las **dependencias locales**:
