@@ -23,40 +23,38 @@ function GenderFilter({ setGenderFilter }) {
     
 
     return (
-        <div>
-        <input
+        <div className="form__filter-gender">
+        <input className="form__filter-gender-radio"
             type="radio"
             id="femaleCheckbox"
             name="gender"
             value="female"
             onChange={handleGenderChange}
         />
-        <label htmlFor="femaleCheckbox">Mujer</label>&nbsp;
+        <label className="filter-gender-label" htmlFor="femaleCheckbox">Mujer</label>&nbsp;
 
-        <input
+        <input className="form__filter-gender-radio"
             type="radio"
             id="maleCheckbox"
             name="gender"
             value="male"
             onChange={handleGenderChange}
         />
-        <label htmlFor="maleCheckbox">Hombre</label>&nbsp;
+        <label className="filter-gender-label" htmlFor="maleCheckbox">Hombre</label>&nbsp;
 
-        <input
+        <input className="form__filter-gender-radio"
             type="radio"
             id="allCheckbox"
             name="gender"
             value=""
             onChange={handleGenderChange}
         />
-        <label htmlFor="allCheckbox">Todes</label>
+        <label className="filter-gender-label" htmlFor="allCheckbox">Todes</label>
         </div>
     );
 }
 
 GenderFilter.propTypes = {
-  handleMaleChange: PropTypes.func.isRequired,
-  handleFemaleChange: PropTypes.func.isRequired,
   setGenderFilter: PropTypes.func.isRequired,
 }
 

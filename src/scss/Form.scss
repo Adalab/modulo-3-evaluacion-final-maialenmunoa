@@ -15,6 +15,23 @@
         background-color: #E8D9BC;
     }
 
+    &__filter-gender{
+        display: flex;
+        align-items: center;
+    }
+
+    &__filter-gender-label {
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    &__filter-gender-radio {
+        margin: 0 5px;
+        border: 2px solid #73151E;
+    }
+
     &__reset {
         align-items: center;
         background-color: #73151E;
