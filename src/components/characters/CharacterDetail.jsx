@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 
-//Importar imágenes de placeholders para cada casa
+//Importar imágenes de escudos para cada casa
 import gryffindorImage from "../../images/gryffindor.png";
 import ravenclawImage from "../../images/revenclaw.png";
 import slytherinImage from "../../images/slytherin.png";
 import hufflepuffImage from "../../images/hufflepuff.png";
+
+//Importar imágenes de placeholders para cada casa
+import gryffindorPlaceholder from '../../images/gryffindor_placeholder.jpg';
+import hufflepuffPlaceholder from '../../images/hufflepuff_placeholder.jpg';
+import ravenclawPlaceholder from '../../images/ravenclaw_placeholder.jpg';
+import slytherinPlaceholder from '../../images/slytherin_placeholder.jpg';
 
 //Importar estilos
 import "../../scss/Detail.scss";
@@ -18,24 +24,32 @@ function CharacterDetail({ findCharacter }) {
   const params = useParams();
   const character = findCharacter(params.id);
 
-// Obtener la imagen de la casa correspondiente
-const houseImages = {
-  Gryffindor: gryffindorImage,
-  Ravenclaw: ravenclawImage,
-  Slytherin: slytherinImage,
-  Hufflepuff: hufflepuffImage,
-};
-const houseImage = houseImages[character.house];
+    // Definir las imágenes de las casas
+    const housePlaceholders = {
+      Gryffindor: gryffindorPlaceholder,
+      Hufflepuff: hufflepuffPlaceholder,
+      Ravenclaw: ravenclawPlaceholder,
+      Slytherin: slytherinPlaceholder,
+    };
+  
+    // Obtener la imagen del personaje o la de la casa si no tiene
+    const characterPlaceholder = character.image || housePlaceholders[character.house];
+
+  // Obtener el escudo de la casa correspondiente
+  const houseImages = {
+    Gryffindor: gryffindorImage,
+    Ravenclaw: ravenclawImage,
+    Slytherin: slytherinImage,
+    Hufflepuff: hufflepuffImage,
+  };
+  const houseImage = houseImages[character.house];
 
   return (
     <div className="detail">
       <div className="detail__content">
         <img
           className="detail__content-img"
-          src={
-            character.image ||
-            "https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter"
-          }
+          src={characterPlaceholder}
           alt={character.name}
         />
         <div className="detail__content-info">
