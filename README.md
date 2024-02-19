@@ -1,4 +1,4 @@
-# Buscador de personajes de Harry Potter
+# Buscador de personajes de Harry Potter ⚡
 
 Este proyecto forma parte de la evaluación final del Módulo 3 del Bootcamp de Programación Web de Adalab. La web está diseñada para buscar, filtrar y mostrar personajes famosos de Harry Potter utilizando tecnologías como React, JavaScript, HTML, y CSS.
 
