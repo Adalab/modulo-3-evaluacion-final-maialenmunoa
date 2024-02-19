@@ -32,11 +32,12 @@ function App() {
   const [genderFilter, setGenderFilter] = useState('');
   const [characterInputValue, setCharacterInputValue] = useState('');
   const [houseInputValue, setHouseInputValue] = useState('Gryffindor');
+  const [genderInputValue, setGenderInputValue] = useState('');
 
   //2. useEffect para cargar los personajes desde la API
   useEffect(() => { 
     window.scrollTo(0, 0);
-    if (!localStorage.includes('characters')) {
+    if (!localStorage.includes('characters')) { 
       fetchCharacters()
         .then(data => {
           setCharacters(data);
@@ -58,6 +59,7 @@ function App() {
 
   const handleGenderFilter = (value) => {
     setGenderFilter(value);
+    setGenderInputValue(value);
   };
 
   const handleReset = () => {
@@ -65,7 +67,8 @@ function App() {
     setHouseFilter('Gryffindor');
     setGenderFilter('');
     setCharacterInputValue('');
-    setHouseInputValue ('Gryffindor');
+    setHouseInputValue('Gryffindor');
+    setGenderInputValue('');
   };
 
   // Filtrar personajes por género
@@ -120,6 +123,7 @@ function App() {
                     houseInputValue={houseInputValue}
                     handleReset={handleReset}
                     setGenderFilter={handleGenderFilter}
+                    genderInputValue={genderInputValue}
                   />
               <CharacterList
                     characters={filteredCharacters}

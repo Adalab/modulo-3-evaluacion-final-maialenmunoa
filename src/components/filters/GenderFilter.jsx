@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 /**
  * Componente para el filtro de género.
  * @param {function} setGenderFilter - Función para establecer el filtro de género.
+ * @param {string} genderInputValue - Valor actual del filtro de género.
+
  */
-function GenderFilter({ setGenderFilter }) {
+function GenderFilter({ setGenderFilter, genderInputValue }) {
   /**
   * Maneja el cambio en la selección de género.
   * @param {object} event - Evento de cambio.
@@ -21,6 +23,7 @@ function GenderFilter({ setGenderFilter }) {
         id="femaleCheckbox"
         name="gender"
         value="female"
+        checked={genderInputValue === "female"}
         onChange={handleGenderChange}
       />
       <label className="filter-gender-label" htmlFor="femaleCheckbox">Mujer</label>&nbsp;
@@ -30,6 +33,7 @@ function GenderFilter({ setGenderFilter }) {
         id="maleCheckbox"
         name="gender"
         value="male"
+        checked={genderInputValue === "male"}
         onChange={handleGenderChange}
       />
       <label className="filter-gender-label" htmlFor="maleCheckbox">Hombre</label>&nbsp;
@@ -39,6 +43,7 @@ function GenderFilter({ setGenderFilter }) {
         id="allCheckbox"
         name="gender"
         value=""
+        checked={genderInputValue === ""}
         onChange={handleGenderChange}
       />
       <label className="filter-gender-label" htmlFor="allCheckbox">Todes</label>
@@ -48,6 +53,7 @@ function GenderFilter({ setGenderFilter }) {
 
 GenderFilter.propTypes = {
   setGenderFilter: PropTypes.func.isRequired,
+  genderInputValue: PropTypes.string.isRequired,
 }
 
 export default GenderFilter;

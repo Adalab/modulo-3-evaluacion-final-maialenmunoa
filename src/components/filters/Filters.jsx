@@ -15,10 +15,10 @@ import '../../scss/Form.scss';
  * @param {function} setGenderFilter - Función para establecer el filtro de género.
  * @param {string} characterInputValue - Valor actual del filtro de personajes.
  * @param {string} houseInputValue - Valor actual del filtro de casas.
+ * @param {string} genderInputValue - Valor actual del filtro de género.
  * @param {function} handleReset - Función para restablecer todos los filtros.
  */
-
-function Filters({ setCharacterFilter, setHouseFilter, setGenderFilter, characterInputValue, houseInputValue, handleReset }) {
+function Filters({ setCharacterFilter, setHouseFilter, setGenderFilter, characterInputValue, houseInputValue, genderInputValue, handleReset }) {
     return (
       <form className="form">
         
@@ -26,17 +26,18 @@ function Filters({ setCharacterFilter, setHouseFilter, setGenderFilter, characte
         <label htmlFor="character-filter">
         <CharacterFilter 
           setCharacterFilter={setCharacterFilter} 
-          characterInputValue={characterInputValue} 
-          houseInputValue={houseInputValue}/>
+          characterInputValue={characterInputValue} />
         </label>
         
         {/* Filtro de casa */}
         <label htmlFor="house-filter">
-        <HouseFilter setHouseFilter={setHouseFilter} />
+        <HouseFilter setHouseFilter={setHouseFilter} 
+        houseInputValue={houseInputValue} />
         </label>
 
         {/* Filtro de género */}
-        <GenderFilter setGenderFilter={setGenderFilter} />
+        <GenderFilter setGenderFilter={setGenderFilter} 
+        genderInputValue={genderInputValue} />
 
         {/* Botón de reset */}
         <button className="form__reset" type="button" onClick={handleReset}>
@@ -54,6 +55,7 @@ Filters.propTypes = {
   houseInputValue: PropTypes.string.isRequired,
   handleReset: PropTypes.func.isRequired,
   setGenderFilter: PropTypes.func.isRequired,
+  genderInputValue: PropTypes.func.isRequired,
 }
   
 export default Filters;
