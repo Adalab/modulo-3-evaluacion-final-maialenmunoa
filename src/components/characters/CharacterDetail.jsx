@@ -24,14 +24,13 @@ function CharacterDetail({ findCharacter }) {
   const params = useParams();
   const character = findCharacter(params.id);
 
-    // Definir las imágenes de las casas
+    // Obtener el placeholder de la casa correspondiente
     const housePlaceholders = {
       Gryffindor: gryffindorPlaceholder,
       Hufflepuff: hufflepuffPlaceholder,
       Ravenclaw: ravenclawPlaceholder,
       Slytherin: slytherinPlaceholder,
     };
-  
     // Obtener la imagen del personaje o la de la casa si no tiene
     const characterPlaceholder = character.image || housePlaceholders[character.house];
 
