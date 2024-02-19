@@ -18,7 +18,11 @@
     transition: transform 0.3s ease;
 
     &:hover {
-        transform: scale(1.05);
+        border-color: #ffcd45;
+        background-color: #73151E;
+        .character__info-name {
+            color: #ffcd45; /* Cambia el color del nombre al hacer clic en el personaje */
+        }
     }
 
     &__image {

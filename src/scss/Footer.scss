@@ -1,8 +1,8 @@
 .footer {
-    background-color: #c0a56f;
+    background-color: #D4B996;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 10px;
     bottom: 0;
     width: 100%;
     margin-top: 50px;
@@ -17,7 +17,7 @@
   
     &__text-author {
         margin-top: 15px;
-        font-family: 'roboto';
+        font-family: 'Roboto', sans-serif; /* Corrige la familia de fuentes */
     }
   
     &__link {
@@ -27,7 +27,7 @@
         justify-content: center;
         margin-top: 10px;
         margin-bottom: 15px;
-        font-family: 'roboto';
+        font-family: 'Roboto', sans-serif; /* Corrige la familia de fuentes */
     }
   
     &__logo {
@@ -39,22 +39,86 @@
         color: white;
     }
 
-    &__btn-up {
-        // Media queries
-        @media screen and (max-width: 768px) {
-            top: auto; /* Elimina la posición superior */
-            bottom: 20px; /* Posiciona el botón hacia arriba desde el borde inferior */
-            right: 20px; /* Ajusta la posición desde el borde derecho */
-            margin: 0; /* Elimina los márgenes */
-        }
-    }
+    // &__btn-up {
+    //     @media screen and (max-width: 768px) {
+    //         top: auto;
+    //         bottom: 20px;
+    //         right: 20px;
+    //         margin: 0;
+    //     }
+    // }
 
-    &__btn-up-img {
-        width: 50px;
-        height: 50px;
-        background-color: #E8D9BC;
-        border-radius: 50%;
-        z-index: 999;
-        cursor: pointer; /* Cambia el cursor a una mano */
-    }
+    // &__btn-up-img {
+    //     width: 50px;
+    //     height: 50px;
+    //     background-color: #F3E4C2; /* Cambia el color del botón hacia el color más claro del gradiente */
+    //     border-radius: 50%;
+    //     z-index: 999;
+    //     cursor: pointer;
+    // }
 }
+
+
+
+
+
+// .footer {
+//     background-color: #c0a56f;
+//     color: white;
+//     text-align: center;
+//     padding: 25px;
+//     bottom: 0;
+//     width: 100%;
+//     margin-top: 50px;
+//     position: relative;
+
+//     &__text {
+//         font-size: 1.2rem;
+//         margin: 10px;
+//         font-style: italic;
+//         font-family: 'Libre Baskerville', serif;
+//     }
+  
+//     &__text-author {
+//         margin-top: 15px;
+//         font-family: 'roboto';
+//     }
+  
+//     &__link {
+//         display: flex;
+//         align-items: center;
+//         text-decoration: none;
+//         justify-content: center;
+//         margin-top: 10px;
+//         margin-bottom: 15px;
+//         font-family: 'roboto';
+//     }
+  
+//     &__logo {
+//         width: 20px;
+//         margin-right: 5px; 
+//     }
+  
+//     &__logo-link {
+//         color: white;
+//     }
+
+//     &__btn-up {
+//         // Media queries
+//         @media screen and (max-width: 768px) {
+//             top: auto; /* Elimina la posición superior */
+//             bottom: 20px; /* Posiciona el botón hacia arriba desde el borde inferior */
+//             right: 20px; /* Ajusta la posición desde el borde derecho */
+//             margin: 0; /* Elimina los márgenes */
+//         }
+//     }
+
+//     &__btn-up-img {
+//         width: 50px;
+//         height: 50px;
+//         background-color: #E8D9BC;
+//         border-radius: 50%;
+//         z-index: 999;
+//         cursor: pointer; /* Cambia el cursor a una mano */
+//     }
+// }
