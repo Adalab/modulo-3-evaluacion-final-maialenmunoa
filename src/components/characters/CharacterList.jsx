@@ -4,17 +4,21 @@ import CharacterCard from "./CharacterCard";
 
 import '../../scss/List.scss';
 
-function CharacterList({ characters, characterFilter, houseFilter }) {
+function CharacterList({ characters, characterFilter, houseFilter, genderFilter }) {
 
-    const filteredCharacters = characters.filter(character => {
-      // Filtrar por nombre
-      const characterMatch = character.name.toLowerCase().includes(characterFilter.toLowerCase());
-  
-      // Filtrar por casa
-      const houseMatch = houseFilter === 'all' || character.house === houseFilter;
-  
-      return characterMatch && houseMatch;
-    });
+  const filteredCharacters = characters.filter(character => {
+    // Filtrar por nombre
+    const characterMatch = character.name.toLowerCase().includes(characterFilter.toLowerCase());
+
+    // Filtrar por casa
+    const houseMatch = houseFilter === 'all' || character.house === houseFilter;
+
+    // Filtrar por género
+    const genderMatch = !genderFilter || character.gender === genderFilter;
+
+    return characterMatch && houseMatch && genderMatch;
+  });
+    
 
     if (filteredCharacters.length === 0 && characterFilter.trim() !== '') {
       return <p className="list__error">No hay ningún personaje que coincida con la palabra &quot;{characterFilter}&quot;</p>;
@@ -41,6 +45,7 @@ CharacterList.propTypes = {
   ).isRequired,
   characterFilter: PropTypes.string.isRequired,
   houseFilter: PropTypes.string.isRequired,
+  genderFilter: PropTypes.string.isRequired,
 };
 
 export default CharacterList;

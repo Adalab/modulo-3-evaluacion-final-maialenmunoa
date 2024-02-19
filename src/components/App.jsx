@@ -1,19 +1,25 @@
 import { useState, useEffect } from 'react';
+
+import HomePage from './HomePage.jsx'
 import Header from './Header'
 import Footer from './Footer'
 import Filters from './filters/Filters'
 import CharacterList from './characters/CharacterList'
 import CharacterDetail from './characters/CharacterDetail'
-import HomePage from './HomePage.jsx'
+
 import { fetchCharacters } from '../services/fetch.js';
 import localStorage from '../services/localStorage.js';
 import { Route, Routes } from "react-router-dom";
+
 import '../scss/App.scss'
+
 function App() {
   //1. Variables de estado
   const [characters, setCharacters] = useState( localStorage.get('characters', []) );
   const [characterFilter, setCharacterFilter] = useState('');
   const [houseFilter, setHouseFilter] = useState('Gryffindor');
+  const [genderFilter, setGenderFilter] = useState('');
+
   // Guardar el estado del filtro de personaje en el estado de App
   const [characterInputValue, setCharacterInputValue] = useState('');
   
@@ -37,17 +43,34 @@ function App() {
   const handleHouseFilter = (value) => {
     setHouseFilter(value);
   };
+  const handleGenderFilter = (value) => {
+    setGenderFilter(value);
+  };
   const handleReset = () => {
     setCharacterFilter('');
     setHouseFilter('Gryffindor');
+    setGenderFilter('');
+
+    setCharacterInputValue('');
   };
-  // Ordenar personajes alfabéticamente por nombre
-  const sortedCharacters = characters.sort((a, b) => {
-    return a.name.localeCompare(b.name);
-  });
-  /*const updateFetch = () => {
-    
-  };*/
+
+  // Filtrar por género
+  const filterByGender = (character) => {
+    if (!genderFilter) return true;
+    return character.gender === genderFilter;
+  };
+
+  // Filtrar por imagen
+  const filterByImage = (character) => {
+    return character.image !== 'https://via.placeholder.com/210x295/%C8%C8%C8/666666/?text=HarryPotter';
+  };
+
+  // Filtrar personajes
+  const filteredCharacters = characters
+    .filter(character => filterByGender(character))
+    .filter(character => filterByImage(character))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
 
   //4. Variables para el html
   const findCharacter = (id) => {
@@ -69,11 +92,13 @@ function App() {
                   setHouseFilter={handleHouseFilter}
                   characterInputValue={characterInputValue}
                   handleReset={handleReset}
+                  setGenderFilter={handleGenderFilter}
                 />
             <CharacterList
-                  characters={sortedCharacters}
+                  characters={filteredCharacters}
                   characterFilter={characterFilter}
                   houseFilter={houseFilter}
+                  genderFilter={genderFilter}
                 />
           </section>
           <Footer />

@@ -35,6 +35,7 @@ CharacterCard.propTypes = {
     species: PropTypes.string.isRequired,
     alive: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired,
+    gender: PropTypes.string
   }).isRequired
 }
 
