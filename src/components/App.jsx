@@ -96,8 +96,6 @@ function App() {
   const filteredCharacters = characters
     .filter(character => filterByGender(character))
     .filter(character => filterByImage(character))
-    // .sort((a, b) => a.name.localeCompare(b.name));
-
 
   //4. Variables para el html
   // Encontrar un personaje por su ID
